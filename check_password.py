@@ -2,10 +2,10 @@ PASS = '123'
 
 
 def password_lock(func):
-    def wrapper(*args):
+    def wrapper(*args, **kwargs):
         password = input("Введите пароль: ")
         if password == PASS:
-            func(*args)
+            func(*args, **kwargs)
         else:
             print('В доступе отказано')
 
